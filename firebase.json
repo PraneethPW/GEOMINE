@@ -1,0 +1,23 @@
+{
+  "auth": {
+    "providers": {
+      "emailPassword": true,
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "GeoMine Observatory",
+        "supportEmail": "praneethreddy0112@gmail.com",
+        "authorizedRedirectUris": [
+          "https://geomine-xnet.vercel.app",
+          "https://geomine-xnet-praneeths-projects-85472172.vercel.app",
+          "http://localhost:5173"
+        ]
+      }
+    },
+    "authorizedDomains": [
+      "geomine-ff45c.firebaseapp.com",
+      "geomine-ff45c.web.app",
+      "geomine-xnet.vercel.app",
+      "geomine-xnet-praneeths-projects-85472172.vercel.app",
+      "localhost"
+    ]
+  }
+}

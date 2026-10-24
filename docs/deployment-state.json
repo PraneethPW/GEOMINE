@@ -1,0 +1,95 @@
+{
+  "vercel": {
+    "projectId": "prj_vwK8ZbvhpBekyI0hfda7I1lWOYwH",
+    "teamId": "team_VHlqyx7lDuayz6DXCVOCfgUd",
+    "teamSlug": "praneeths-projects-85472172",
+    "projectName": "geomine-xnet",
+    "rootDirectory": "frontend",
+    "status": "deployed"
+  },
+  "railway": {
+    "status": "api-and-worker-healthy",
+    "projectId": "22b85ba5-6036-49ed-87cf-f1618a10d598",
+    "services": {
+      "api": "8d2b8da7-5362-4be5-ab68-bbf9d588756e",
+      "worker": "23660399-a728-4eba-adaf-ed5c5cabcc16"
+    },
+    "authentication": "local-cli",
+    "environmentId": "879998ef-4fa6-4664-b543-afe1aaf653af",
+    "apiUrl": "https://geomine-api-production.up.railway.app",
+    "workerPublicDomain": null,
+    "apiDeploymentId": "115ab066-1f28-45ab-8ccd-c17dad1b77f2",
+    "workerDeploymentId": "1614c2bb-0c75-4de9-a662-17accd27bc9a",
+    "maxAoiKm2": 25,
+    "allowedFrontendOrigins": [
+      "https://geomine-xnet.vercel.app",
+      "https://geomine-xnet-praneeths-projects-85472172.vercel.app",
+      "https://geomine-xnet-jkxx5dp6y-praneeths-projects-85472172.vercel.app"
+    ],
+    "schemaMigration": 4
+  },
+  "frontendDeployment": {
+    "id": "dpl_6FC7Aomtvd21dLHim3bA5PhYiSLz",
+    "url": "https://geomine-xnet.vercel.app",
+    "status": "READY",
+    "browserApiConnectionVerified": true,
+    "browserLiveRadarCatalogVerified": true,
+    "publicNarrativeVerified": true,
+    "privateRouteRedirectVerified": true,
+    "signupRouteVerified": true,
+    "missingAssetsReturn404": true,
+    "firebaseLoginPageVerified": true,
+    "passwordRecoveryRouteVerified": true
+  },
+  "neon": {
+    "status": "connected-schema-initialized",
+    "schema": "geomine",
+    "seededApplicationData": false
+  },
+  "openrouter": {
+    "status": "free-analyst-inference-verified-in-isolated-workspace",
+    "route": "nvidia/nemotron-3.5-lightning:free",
+    "humanReviewRequired": true
+  },
+  "radar": {
+    "provider": "digital-earth-africa",
+    "coverage": "Africa",
+    "keyRequired": false,
+    "analysisResolutionM": 30,
+    "livePixelReadVerified": true,
+    "physicalPipelineVerified": true,
+    "samePassAdjacentTilesSupported": true
+  },
+  "openweather": {
+    "status": "rejected-http-401-invalid-api-key",
+    "configured": false
+  },
+  "verification": {
+    "backendTestsPassed": 39,
+    "authenticatedEndToEndEnvironment": "isolated-local-postgresql",
+    "productionAcceptanceDataInserted": false,
+    "productionAuthenticatedAcceptance": "real-user-requested-analysis-processed; remaining review/monitoring acceptance pending",
+    "date": "2026-10-25",
+    "productionAnalysisRetryVerified": true,
+    "productionAnalysisJobId": "b78c5dde-d959-4652-9c02-a05d92dcb959",
+    "productionGoogleWorkspaceAcceptance": "user-confirmed",
+    "scheduledMonitoringAcceptance": "real remote imagery; isolated local database; zero clear optical overlap explicitly reported",
+    "encryptedNeonRestoreDrill": "passed",
+    "accessibility": "jsx-a11y plus desktop modal focus/escape and route-heading checks; broader testing pending",
+    "initialJavascriptGzipBytes": 136458,
+    "externalUptimeAlerts": "not connected",
+    "automatedOffMachineBackups": "not configured"
+  },
+  "firebase": {
+    "projectId": "geomine-ff45c",
+    "webAppId": "1:184994818808:web:d7b3b3f07025f95c67e90d",
+    "emailPasswordEnabled": true,
+    "googleEnabled": true,
+    "emailVerificationRequired": true,
+    "minimumPasswordLength": 12,
+    "realGoogleWorkspaceAccess": "confirmed by user",
+    "emailDeliveryAcceptance": "pending real inbox verification/reset",
+    "privateServiceAccountRole": "roles/firebaseauth.viewer",
+    "legacyWorkspaceLink": "previous-password proof required; stable Neon owner UUID"
+  }
+}

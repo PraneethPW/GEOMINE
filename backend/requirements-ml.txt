@@ -1,0 +1,4 @@
+-r requirements.lock
+torch>=2.6,<3
+torchvision>=0.21,<1
+timm>=1.0,<2
