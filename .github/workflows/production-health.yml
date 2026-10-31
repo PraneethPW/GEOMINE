@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Check the live API, database readiness, and worker
+      - name: Check the live frontend, database readiness, and worker
         shell: bash
         run: |
           python3 - <<'PY'
-          import concurrent.futures, json, time, urllib.request
+          import concurrent.futures, json, re, time, urllib.request
           origin = 'https://geomine-api-production.up.railway.app'
           def check(path):
               for attempt in range(3):
@@ -37,4 +37,21 @@ jobs:
                       time.sleep(20)
           with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:
               list(executor.map(check, ['/api/ready', '/api/health/worker']))
+          frontend = 'https://geomine-xnet.vercel.app'
+          for attempt in range(3):
+              try:
+                  with urllib.request.urlopen(frontend, timeout=30) as response:
+                      html = response.read(1_000_000).decode('utf-8')
+                  entry = re.search(r'<script[^>]+src="(/assets/[^"?]+\.js)"', html)
+                  if '<div id="root">' not in html or not entry:
+                      raise ValueError('Frontend application HTML is missing')
+                  with urllib.request.urlopen(frontend + entry.group(1), timeout=30) as response:
+                      if response.status != 200 or 'javascript' not in response.headers.get('Content-Type', '') or not response.read(1):
+                          raise ValueError('Frontend entry asset is unavailable')
+                  print('Frontend HTML and entry asset: healthy', flush=True)
+                  break
+              except Exception as error:
+                  if attempt == 2:
+                      raise RuntimeError('Frontend unavailable after three checks (' + type(error).__name__ + ')') from None
+                  time.sleep(20)
           PY
